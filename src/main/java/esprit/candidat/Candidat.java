@@ -1,10 +1,14 @@
 package esprit.candidat;
 
+import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
+
 @Entity
 public class Candidat {
 
@@ -12,6 +16,16 @@ public class Candidat {
     @Id
     private int id;
     private String nom, prenom , email;
+    @ElementCollection
+    private Set<Integer> favoriteJobs = new HashSet<>();
+
+    public Set<Integer> getFavoriteJobs() {
+        return favoriteJobs;
+    }
+
+    public void setFavoriteJobs(Set<Integer> favoriteJobs) {
+        this.favoriteJobs = favoriteJobs;
+    }
 
     public Candidat() {
     }
