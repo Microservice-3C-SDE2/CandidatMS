@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 @Configuration
 public class RabbitMQConfig {
-    public static final String CANDID_JOB_QUEUE = "jobQueueSDE22";
+    public static final String CANDID_JOB_QUEUE = "jobQueueSDE1";
     @Bean
     public Queue jobQueue() {
         return new Queue(CANDID_JOB_QUEUE, true);
